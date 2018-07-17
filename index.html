@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Word Guess Game</title>
+    <!--Reset-->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!--CSS Reference-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bungee+Inline|Gaegu" rel="stylesheet">
+    <!--Responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<div id="game">
+    <img src="assets/images/welcome.jpg" alt=".">
+    <h1>WELCOME TO TRIASSIC PARK!</h1>
+    <P>|   press any key to begin   |</P>
+</div>
+
+
+    <script type="text/javascript">
+
+
+//List of words to guess
+    var dinoWordArray = ["triassic","fossils","extinction","prehistoric","omnivore","triceratops","pterodactyl","carnivore","herbivore","tyrannosaurusrex"];
+//Random generater
+    var randomWord = dinoWordArray[Math.floor(Math.random() * dinoWordArray.length)] ;
+//Create Variables
+    var count = 0;
+//Compare letters to answers
+    var answerArray = [];
+//Number of guesses
+    var guesses = 0;
+//Number of guesses left
+    var guessesLeft = 0;
+//Number of wins
+    var wins = 0;
+//Number of losses
+    var losses = 0;
+
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,18 @@
+
+h1 {
+    font-family: 'Bungee Inline', cursive;
+    font-size: 75px;
+    color: red;
+    text-shadow: 5px 5px 2px gray;
+}
+p {
+    font-family: 'Gaegu', cursive;
+    font-size: 45px;
+    color: white;
+    text-shadow: 3px 3px 2px black;
+}
+img {
+    width: 100%;
+}
+
+  
