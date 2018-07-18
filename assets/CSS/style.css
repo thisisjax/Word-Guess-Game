@@ -1,18 +1,33 @@
-
+/*Welcome page of game*/
+#game {
+    position: relative;
+}
 h1 {
     font-family: 'Bungee Inline', cursive;
     font-size: 75px;
     color: red;
     text-shadow: 5px 5px 2px gray;
+    margin: 75px 0px 0px 20px;
 }
 p {
     font-family: 'Gaegu', cursive;
     font-size: 45px;
     color: white;
     text-shadow: 3px 3px 2px black;
+    margin: 250px 0px 0px 350px;
 }
+/*Background Image*/
 img {
-    width: 100%;
+    width: 85%;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
+.text {
+    z-index: 100;
+    position: absolute;
+}
+
+/*Game Starting Page
 
   

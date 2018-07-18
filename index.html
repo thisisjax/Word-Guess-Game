@@ -19,8 +19,10 @@
 <body>
 <div id="game">
     <img src="assets/images/welcome.jpg" alt=".">
+    <div class="text">
     <h1>WELCOME TO TRIASSIC PARK!</h1>
     <P>|   press any key to begin   |</P>
+    </div>
 </div>
 
 
@@ -29,20 +31,50 @@
 
 //List of words to guess
     var dinoWordArray = ["triassic","fossils","extinction","prehistoric","omnivore","triceratops","pterodactyl","carnivore","herbivore","tyrannosaurusrex"];
-//Random generater
-    var randomWord = dinoWordArray[Math.floor(Math.random() * dinoWordArray.length)] ;
-//Create Variables
-    var count = 0;
-//Compare letters to answers
-    var answerArray = [];
+
+    var s;
 //Number of guesses
-    var guesses = 0;
+    var guesses = 10;
 //Number of guesses left
     var guessesLeft = 0;
 //Number of wins
     var wins = 0;
 //Number of losses
     var losses = 0;
+//Compare letters to answers
+    var answerArray = [];
+
+    function startUp(
+        {
+            for (var i = 0; i < randomWord.length; i++)
+            {
+                answerArray[i] ="_";
+            }
+            s = answerArray.join(" ");
+            document.getElementById("answer").innerHTML = s;
+        }
+    
+
+//Function run whenever the user presses a key
+document.onkeyup = function (event) {
+//determines which key was pressed
+    var userGuess = event.key;
+//Random generater
+
+    var randomWord = dinoWordArray[Math.floor(Math.random() * dinoWordArray.length)] ;
+//Only run the following code if the user presses
+if (())
+}
+
+//to hold our new html
+var html =
+"<p>Number of Guesses: " + guesses + "</p" +
+"<p>Guesses Left: " + guessesLeft + "</p>" +
+"<p>Wins: " + wins + "</p" +
+"<p>Losses: " + losses + "</p" +
+
+     document.querySelector("#game").innerHTML = html;
+};
 
 </script>
     
