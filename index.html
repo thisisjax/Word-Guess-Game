@@ -12,16 +12,15 @@
     <!--CSS Reference-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!--Google Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bungee+Inline|Gaegu" rel="stylesheet">
-    <!--Responsive-->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Shadows+Into+Light" rel="stylesheet">    <!--Responsive-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
     <div id="game">
-        <!-- <img src="assets/images/welcome.jpg" alt="."> -->
+        <img src="assets/images/crystal.jpg" alt=".">
         <div class="text">
-            <h1>WELCOME TO TRIASSIC PARK!</h1>
+            <h1>Psychic Game</h1>
             <h2>| press any key to begin |</h2>
         </div>
     </div>
@@ -35,7 +34,7 @@
         var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
         //Number of guesses
-        var guesses = 0;
+        var guessesSoFar = [];
         //Number of guesses left
         var guessesLeft = 0;
         //Number of wins
@@ -45,30 +44,30 @@
 
         //Function run whenever the user presses a key
         document.onkeyup = function (event) {
+             //Random generater
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
             //determines which key was pressed
             var userGuess = event.key;
-            //Random generater
+           
+       
+           
 
-            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
-            //Alerts the user the rules of the game
-            alert("Try to guess the same letter as the computer to win!");
             //Only run the following code if the user presses
             if (userGuess === computerGuess) {
                 wins++;
-                console.log("Wins = " + ties);
+                console.log("You Win! = " + wins);
             }
-            else if (userGuess != computerGuess) {
+            else if (userGuess != losses) {
                 losses++;
-                console.log("Losses = " + losses);
+                console.log("You Lose! = " + computerGuess);
             }
-            // else if ((userGuess === "a" && ))
+            
+            
 
-
-                //to hold our new html
+            //to hold our new html
                 var html =
-                    "<h1>WELCOME TO TRIASSIC PARK!</h1>" +
-                    "<p>Number of Guesses: " + guesses + "</p>" +
+                    "<h3>Try to guess the lettr im thinking of!</h3>" +
+                    "<p><br>Guesses So Far: " + guessesSoFar + "</p>" +
                     "<p><br>Guesses Left: " + guessesLeft + "</p>" +
                     "<p><br>Wins: " + wins + "</p>" +
                     "<p><br>Losses: " + losses + "</p>";
