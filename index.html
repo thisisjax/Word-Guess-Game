@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,66 +18,66 @@
 </head>
 
 <body>
-<div id="game">
-    <img src="assets/images/welcome.jpg" alt=".">
-    <div class="text">
-    <h1>WELCOME TO TRIASSIC PARK!</h1>
-    <P>|   press any key to begin   |</P>
+    <div id="game">
+        <!-- <img src="assets/images/welcome.jpg" alt="."> -->
+        <div class="text">
+            <h1>WELCOME TO TRIASSIC PARK!</h1>
+            <h2>| press any key to begin |</h2>
+        </div>
     </div>
-</div>
 
 
     <script type="text/javascript">
 
 
-//List of words to guess
-    var dinoWordArray = ["triassic","fossils","extinction","prehistoric","omnivore","triceratops","pterodactyl","carnivore","herbivore","tyrannosaurusrex"];
 
-    var s;
-//Number of guesses
-    var guesses = 10;
-//Number of guesses left
-    var guessesLeft = 0;
-//Number of wins
-    var wins = 0;
-//Number of losses
-    var losses = 0;
-//Compare letters to answers
-    var answerArray = [];
+        //List of words to guess
+        var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-    function startUp(
-        {
-            for (var i = 0; i < randomWord.length; i++)
-            {
-                answerArray[i] ="_";
+        //Number of guesses
+        var guesses = 0;
+        //Number of guesses left
+        var guessesLeft = 0;
+        //Number of wins
+        var wins = 0;
+        //Number of losses
+        var losses = 0;
+
+        //Function run whenever the user presses a key
+        document.onkeyup = function (event) {
+            //determines which key was pressed
+            var userGuess = event.key;
+            //Random generater
+
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+            //Alerts the user the rules of the game
+            alert("Try to guess the same letter as the computer to win!");
+            //Only run the following code if the user presses
+            if (userGuess === computerGuess) {
+                wins++;
+                console.log("Wins = " + ties);
             }
-            s = answerArray.join(" ");
-            document.getElementById("answer").innerHTML = s;
-        }
-    
+            else if (userGuess != computerGuess) {
+                losses++;
+                console.log("Losses = " + losses);
+            }
+            // else if ((userGuess === "a" && ))
 
-//Function run whenever the user presses a key
-document.onkeyup = function (event) {
-//determines which key was pressed
-    var userGuess = event.key;
-//Random generater
 
-    var randomWord = dinoWordArray[Math.floor(Math.random() * dinoWordArray.length)] ;
-//Only run the following code if the user presses
-if (())
-}
+                //to hold our new html
+                var html =
+                    "<h1>WELCOME TO TRIASSIC PARK!</h1>" +
+                    "<p>Number of Guesses: " + guesses + "</p>" +
+                    "<p><br>Guesses Left: " + guessesLeft + "</p>" +
+                    "<p><br>Wins: " + wins + "</p>" +
+                    "<p><br>Losses: " + losses + "</p>";
 
-//to hold our new html
-var html =
-"<p>Number of Guesses: " + guesses + "</p" +
-"<p>Guesses Left: " + guessesLeft + "</p>" +
-"<p>Wins: " + wins + "</p" +
-"<p>Losses: " + losses + "</p" +
+            document.querySelector("#game").innerHTML = html;
+        };
 
-     document.querySelector("#game").innerHTML = html;
-};
+    </script>
 
-</script>
-    
 </body>
+
 </html>

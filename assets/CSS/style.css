@@ -9,7 +9,7 @@ h1 {
     text-shadow: 5px 5px 2px gray;
     margin: 75px 0px 0px 20px;
 }
-p {
+h2 {
     font-family: 'Gaegu', cursive;
     font-size: 45px;
     color: white;
@@ -28,6 +28,14 @@ img {
     position: absolute;
 }
 
-/*Game Starting Page
-
+/*Game Starting Page*/
+body {
+    background-image: url("../images/welcome.jpg");
+}
+p {
+    font-family: 'Gaegu', cursive;
+    font-size: 30px;
+    color: white;
+    text-shadow: 3px 3px 2px black;
+}
   
