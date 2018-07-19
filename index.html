@@ -12,8 +12,11 @@
     <!--CSS Reference-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!--Google Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Shadows+Into+Light" rel="stylesheet">    <!--Responsive-->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Shadows+Into+Light" rel="stylesheet">
+    <!--Responsive-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Javascript-->
+    <script src="asssets/javascripts/game.js"></script>
 </head>
 
 <body>
@@ -21,9 +24,10 @@
         <img src="assets/images/crystal.jpg" alt=".">
         <div class="text">
             <h1>Psychic Game</h1>
-            <h2>| press any key to begin |</h2>
+            <h2>| Press the letter that I'm thinkin of |</h2>
         </div>
     </div>
+
 
 
     <script type="text/javascript">
@@ -36,7 +40,7 @@
         //Number of guesses
         var guessesSoFar = [];
         //Number of guesses left
-        var guessesLeft = 0;
+        var guessesLeft = 15;
         //Number of wins
         var wins = 0;
         //Number of losses
@@ -44,33 +48,53 @@
 
         //Function run whenever the user presses a key
         document.onkeyup = function (event) {
-             //Random generater
+            //Random generater
             var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
             //determines which key was pressed
             var userGuess = event.key;
-           
-       
-           
+            function reset(){
+                guessesLeft = 15;
+                guessesSoFar = [];
+                
+            }
+
+            function myGuess(guess) {
+                var userGuess = document.getElementById('guesesSoFar');
+                var computerGuess = document.getElementById('guessesLeft').value;
+            }
 
             //Only run the following code if the user presses
+            if (guessesLeft > 0) {
             if (userGuess === computerGuess) {
                 wins++;
+                alert("You Win!");
+                reset();
                 console.log("You Win! = " + wins);
             }
-            else if (userGuess != losses) {
-                losses++;
-                console.log("You Lose! = " + computerGuess);
+            else if (userGuess != computerGuess) {
+                guessesLeft--;
+                guessesSoFar.push(userGuess);
             }
-            
+        }
+            else if (guessesLeft < 1) {
+                losses++;
+                reset();
+                console.log("You Lose! = " + losses);
+                alert("You Lose!")
+            }
+
             
 
+
+
+
             //to hold our new html
-                var html =
-                    "<h3>Try to guess the lettr im thinking of!</h3>" +
-                    "<p><br>Guesses So Far: " + guessesSoFar + "</p>" +
-                    "<p><br>Guesses Left: " + guessesLeft + "</p>" +
-                    "<p><br>Wins: " + wins + "</p>" +
-                    "<p><br>Losses: " + losses + "</p>";
+            var html =
+                "<h3>Psychic Game</h3>" +
+                "<p><br>Guesses So Far: " + guessesSoFar + "</p>" +
+                "<p><br>Guesses Left: " + guessesLeft + "</p>" +
+                "<p><br>Wins: " + wins + "</p>" +
+                "<p><br>Losses: " + losses + "</p>";
 
             document.querySelector("#game").innerHTML = html;
         };

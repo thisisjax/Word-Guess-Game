@@ -39,6 +39,7 @@ img {
 /*Game Starting Page*/
 body {
     background-image: url("../images/crystal.jpg");
+    background-repeat: no-repeat;
 }
 p {
     font-family: 'Shadows Into Light', cursive;
